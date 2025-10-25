@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Seçim Rehberi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script></head>
+<body>
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/02/10/audio_7bf9ec9e09.mp3?filename=relaxing-145038.mp3" type="audio/mpeg">
+    </audio>
+    <div id="particles-js"></div>
+    <div class="background-images">
+        <img src="https://cdn-icons-png.flaticon.com/512/1005/1005141.png" alt="Bilişim" class="floating-image tech-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/2618/2618524.png" alt="Elektronik" class="floating-image electronics-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/2491/2491418.png" alt="Biyomedikal" class="floating-image biomedical-image">
+    </div>
+    <div class="container">
+        <div id="welcome-screen" class="section active">
+            <h1 class="animate__animated animate__fadeInDown">Meslek Alanı Keşif Yolculuğuna Hoş Geldiniz!</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Geleceğinizi şekillendirecek alan seçiminizde size yardımcı olacağız.</p>
+            <button id="start-journey" class="animate__animated animate__pulse animate__infinite">Yolculuğa Başla</button>
+        </div>
+        <div id="form-section" class="section">
+            <h1>Alan Seçim Rehberi</h1>
+            <form id="student-form">
+                <div class="form-group">
+                    <label for="name">Ad Soyad:</label>
+                    <input type="text" id="name" placeholder="Ad Soyad (İsteğe bağlı)">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefon:</label>
+                    <input type="tel" id="phone" placeholder="Telefon Numarası">
+                </div>
+                <div class="form-group">
+                    <label for="parent">Veli Adı Soyadı:</label>
+                    <input type="text" id="parent" placeholder="Veli Adı Soyadı">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-posta:</label>
+                    <input type="email" id="email" placeholder="E-posta Adresi">
+                </div>
+                <div class="form-group">
+                    <label for="school">Okul:</label>
+                    <input type="text" id="school" placeholder="Okul Adı">
+                </div>
+                <button type="submit">Teste Başla</button>
+            </form>
+        </div>
+
+        <div id="quiz-section" class="section">
+            <div id="quiz-header"></div>
+            <div id="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <h2 id="question-text"></h2>
+            <div id="options" class="options-container">
+                <button class="option" data-value="1">Kesinlikle Katılmıyorum</button>
+                <button class="option" data-value="2">Katılmıyorum</button>
+                <button class="option" data-value="3">Kararsızım</button>
+                <button class="option" data-value="4">Katılıyorum</button>
+                <button class="option" data-value="5">Kesinlikle Katılıyorum</button>
+            </div>
+        </div>
+
+        <div id="result-section" class="section">
+            <h2 class="result-title animate__animated animate__fadeInDown">Sonuç</h2>
+            <p id="result-text" class="animate__animated animate__fadeIn"></p>
+            <div class="certificate-container animate__animated animate__zoomIn">
+                <div id="certificate" class="certificate">
+                    <div class="school-name">Yıl Üretefiz Özel Meslek Lisesi</div>
+                    <div class="certificate-header">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF0WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuMWI2NWE3OWI0LCAyMDIyLzA2LzEzLTIyOjAxOjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjQuMCAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIzLTEwLTI0VDEwOjQ4OjQ3KzAzOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIzLTEwLTI0VDEwOjQ4OjQ3KzAzOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMy0xMC0yNFQxMDo0ODo0NyswMzowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowZWRiNWM4Ny01OGI0LTRmNDUtOTI1Ny1kYjAxNjM5ZjI2YTAiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDowYTNlMzBlYy01YzA5LWE1NDgtOTIzYi05YTUwMmYyY2Y5YWMiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMWY5ZmQ5ZS00ZWJmLTRmNDUtYTI1Ny1kYjAxNjM5ZjI2YTAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDowMWY5ZmQ5ZS00ZWJmLTRmNDUtYTI1Ny1kYjAxNjM5ZjI2YTAiIHN0RXZ0OndoZW49IjIwMjMtMTAtMjRUMTA6NDg6NDcrMDM6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNC4wIChXaW5kb3dzKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MGVkYjVjODctNThiNC00ZjQ1LTkyNTctZGIwMTYzOWYyNmEwIiBzdEV2dDp3aGVuPSIyMDIzLTEwLTI0VDEwOjQ4OjQ3KzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjQuMCAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+wZXPWAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAUBSURBVHic7d1BiJ11GMfx7yabiCQiIiIiIiIiIiIiIiIiskQiIrJIiIiILCIiIiIiIiJLRC4RWERkiYiIiBCRJSIiIiIiImOJiIiIiMgQkbHEIiIiIiIi/w7PM+y63Zm7884573nf5/3+4MMue9n3vL/nPc85z3nOewYzMzMzM+s43WAwGGx0cC8eKPh7Tsd5+DA+h6/ge/gZ/tBdDytwGo7gsTX+7Tf4Gr6Mz+BL+NkIXzFCPIpn8Gwcw3H8C79VXYiRLeBWvI9f4aRRcwKfxN24DGdN66XNl+G4FU/hW/gHR02B3+BDuA0XTuPFzXhkuA734nWx/h83pRaxhFtxftnBmPHosBX34BX8YQbqGa6AR0oJxZjnRrLzxFppAW+LWXbeF74msWteKuyVuBufwF9nqN6NbMVt+drkTWKKTPWlZ5LR4QzcgS+JvfusL3jxT9yHK0RjFSWMDjtwJ17EL1Re+DC8+MO4WYw45Wg+OlyI+/EO/qby4tdyQkytH+IXlUerddqBh/AZDteueC1nife4q7B31rXahMvxBL6JkzV/+XpTy3pTy4X51fBic3WY2k7UpO0QG1Cv4086Hs7KVLrA0WENt4uNlnHXHCeV3+isSbpO7HYbgyIjwwW4Dx/i7yp/ybV5Su+7WbVFbBJ9KEaIUY0/VDOIC8XBNK/pJlwszsz/B4/jfjysf7vVayY2TlttRa4Xy0x/bXYTjshX4zkHj+BDccrCD6IqUSBeF7Ue6z2Is6U5Gpwh9gjuxgt4Ai/jE7G2/wy+F2fYf8Q/8W+VN2dMhmi8z2s9iLMl6yy8e4PP/RuvFKPHFaLhXMb9hItwvxh53hRrjJPqnTRqY0rUOj6HOs7Cz9+tuAOfFqPB3/gvvqzNZ+E7Zb3KhakupYbLRKO9jGPiSPG74mz8tKmwdS+RqWU8hntEY3w8Bw22EXEa5JHVjlWUqHrO1NKd4mTFx/BhPIerxcGhdtmGq8VmzofiFMUncL+4UM5UGHl0yFR9K12J0eAOcSLhK2I/Y1YXvGmxFZeII8cvi52jO8VVb6ZK1uhQfIenxOhwK94Ry5J5bLChFj+Kt/N7ca+K3rk4nL0oesVn8YEcn8XENz/t4eZkMoiR4VqxU/6eOEFwXOWvvCu+jVPi7NMbcZHuhOcWzg/WIa42cxW+IV4ORWktxob6SMoFeEScAfUxfov/qPylJ7Ek7oVxnbgvSbHpE9Qf2M4W6Y7lhbjr9BF8Ey+LNX3Vl8Ja7sIX8Qlxp+wdJf7YbN+Z4WJxhdq3xJVnqr4k1rN4Dh4RN7/fsJxfmxuxHDpHXIf1XXFWVdWXxHE4jvfFLYAuEhegSNMP5zdqb3GzuvfEnViqviyO4y+Y9Ao1fTv9yPy3A4/hNXES4rwufFmO4h6x61905GvxCD6Mt8VdS+bl0ljCT+IU9QfwgFju7Cr586T+FE0zoL6LV/GceFnMw2EzcYTiZXE4ru/TIquemdiN28RVyI+Ia7DP+snUI8ZfxNVmHsWduEq54/epZjA3QtDmxQV2DoszPA/gU/gcPid+Mf8U/tKzTaXjYg3/FR7E9eKXKbUVocfnGP4aXbLFn+JGLBeIKfZScYufi8X5R7vElV7b6N5nHu1YO0R6grjz2vV4Xvw47rS4M+ZMdlRts2EjLIiLBDT6gJOZmZmZmVnX+Q8BBCaAjHrzYwAAAABJRU5ErkJggg==" alt="Yıl Üretefiz Özel Meslek Lisesi" class="certificate-logo">
+                        <h2>Alan Seçim Başarı Belgesi</h2>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF0WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuMWI2NWE3OWI0LCAyMDIyLzA2LzEzLTIyOjAxOjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjQuMCAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIzLTEwLTI0VDEwOjQ4OjQ3KzAzOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIzLTEwLTI0VDEwOjQ4OjQ3KzAzOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMy0xMC0yNFQxMDo0ODo0NyswMzowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowZWRiNWM4Ny01OGI0LTRmNDUtOTI1Ny1kYjAxNjM5ZjI2YTAiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDowYTNlMzBlYy01YzA5LWE1NDgtOTIzYi05YTUwMmYyY2Y5YWMiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMWY5ZmQ5ZS00ZWJmLTRmNDUtYTI1Ny1kYjAxNjM5ZjI2YTAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDowMWY5ZmQ5ZS00ZWJmLTRmNDUtYTI1Ny1kYjAxNjM5ZjI2YTAiIHN0RXZ0OndoZW49IjIwMjMtMTAtMjRUMTA6NDg6NDcrMDM6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNC4wIChXaW5kb3dzKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MGVkYjVjODctNThiNC00ZjQ1LTkyNTctZGIwMTYzOWYyNmEwIiBzdEV2dDp3aGVuPSIyMDIzLTEwLTI0VDEwOjQ4OjQ3KzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjQuMCAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+wZXPWAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAUBSURBVHic7d1BiJ11GMfx7yabiCQiIiIiIiIiIiIiIiIiskQiIrJIiIiILCIiIiIiIiJLRC4RWERkiYiIiBCRJSIiIiIiImOJiIiIiMgQkbHEIiIiIiIi/w7PM+y63Zm7884573nf5/3+4MMue9n3vL/nPc85z3nOewYzMzMzM+s43WAwGGx0cC8eKPh7Tsd5+DA+h6/ge/gZ/tBdDytwGo7gsTX+7Tf4Gr6Mz+BL+NkIXzFCPIpn8Gwcw3H8C79VXYiRLeBWvI9f4aRRcwKfxN24DGdN66XNl+G4FU/hW/gHR02B3+BDuA0XTuPFzXhkuA734nWx/h83pRaxhFtxftnBmPHosBX34BX8YQbqGa6AR0oJxZjnRrLzxFppAW+LWXbeF74msWteKuyVuBufwF9nqN6NbMVt+drkTWKKTPWlZ5LR4QzcgS+JvfusL3jxT9yHK0RjFSWMDjtwJ17EL1Re+DC8+MO4WYw45Wg+OlyI+/EO/qby4tdyQkytH+IXlUerddqBh/AZDteueC1nife4q7B31rXahMvxBL6JkzV/+XpTy3pTy4X51fBic3WY2k7UpO0QG1Cv4086Hs7KVLrA0WENt4uNlnHXHCeV3+isSbpO7HYbgyIjwwW4Dx/i7yp/ybV5Su+7WbVFbBJ9KEaIUY0/VDOIC8XBNK/pJlwszsz/B4/jfjysf7vVayY2TlttRa4Xy0x/bXYTjshX4zkHj+BDccrCD6IqUSBeF7Ue6z2Is6U5Gpwh9gjuxgt4Ai/jE7G2/wy+F2fYf8Q/8W+VN2dMhmi8z2s9iLMl6yy8e4PP/RuvFKPHFaLhXMb9hItwvxh53hRrjJPqnTRqY0rUOj6HOs7Cz9+tuAOfFqPB3/gvvqzNZ+E7Zb3KhakupYbLRKO9jGPiSPG74mz8tKmwdS+RqWU8hntEY3w8Bw22EXEa5JHVjlWUqHrO1NKd4mTFx/BhPIerxcGhdtmGq8VmzofiFMUncL+4UM5UGHl0yFR9K12J0eAOcSLhK2I/Y1YXvGmxFZeII8cvi52jO8VVb6ZK1uhQfIenxOhwK94Ry5J5bLChFj+Kt/N7ca+K3rk4nL0oesVn8YEcn8XENz/t4eZkMoiR4VqxU/6eOEFwXOWvvCu+jVPi7NMbcZHuhOcWzg/WIa42cxW+IV4ORWktxob6SMoFeEScAfUxfov/qPylJ7Ek7oVxnbgvSbHpE9Qf2M4W6Y7lhbjr9BF8Ey+LNX3Vl8Ja7sIX8Qlxp+wdJf7YbN+Z4WJxhdq3xJVnqr4k1rN4Dh4RN7/fsJxfmxuxHDpHXIf1XXFWVdWXxHE4jvfFLYAuEhegSNMP5zdqb3GzuvfEnViqviyO4y+Y9Ao1fTv9yPy3A4/hNXES4rwufFmO4h6x61905GvxCD6Mt8VdS+bl0ljCT+IU9QfwgFju7Cr586T+FE0zoL6LV/GceFnMw2EzcYTiZXE4ru/TIquemdiN28RVyI+Ia7DP+snUI8ZfxNVmHsWduEq54/epZjA3QtDmxQV2DoszPA/gU/gcPid+Mf8U/tKzTaXjYg3/FR7E9eKXKbUVocfnGP4aXbLFn+JGLBeIKfZScYufi8X5R7vElV7b6N5nHu1YO0R6grjz2vV4Xvw47rS4M+ZMdlRts2EjLIiLBDT6gJOZmZmZmVnX+Q8BBCaAjHrzYwAAAABJRU5ErkJggg==" alt="Yıl Üretefiz Özel Meslek Lisesi" class="certificate-logo">
+                    </div>
+                    <div class="certificate-content">
+                        <p class="certificate-text">İşbu belge;</p>
+                        <p id="certificate-name" class="certificate-student"></p>
+                        <p class="certificate-text">adlı öğrencinin, Alan Seçim Rehberi değerlendirmesini başarıyla tamamladığını ve</p>
+                        <p id="certificate-field" class="certificate-result"></p>
+                        <p class="certificate-text">alanında yetkinlik gösterdiğini belgeler.</p>
+                        <div class="certificate-footer">
+                            <p id="certificate-date" class="certificate-date"></p>
+                            <div class="certificate-stamp">
+                                <div class="stamp-inner">✓</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button id="download-pdf" class="action-button">PDF İndir</button>
+                <button id="download-odt" class="action-button" onclick="downloadODT()">ODT İndir</button>
+                <button id="send-email" class="action-button">E-posta Gönder</button>
+                <button id="print-certificate" class="action-button">Yazdır</button>
+            </div>
+        </div>
+    </div>
+    <script src="questions.js"></script>
+    <script src="html2pdf.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
