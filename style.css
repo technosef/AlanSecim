@@ -5,6 +5,25 @@
     font-family: Arial, sans-serif;
 }
 
+.music-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+.music-btn:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+
 body {
     background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
     min-height: 100vh;
